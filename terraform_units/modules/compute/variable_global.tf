@@ -58,6 +58,7 @@ variable "nic_locks" {
 variable "aad_system_assigned_identity" {
   description = "AAD system assigned identity"
   type        = bool
+  default = false
 }
 
 variable "skip_service_principal_aad_check" {

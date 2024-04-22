@@ -103,6 +103,11 @@ variable "vm_user_assigned_identity_id" {
   description = "The ID of the user assigned identity to be used for the virtual machine"
 }
 
+variable "enable_system_assigned_identity" {
+  description = "If set to true, will enable system assigned identity for the virtual machine"
+  default     = false
+}
+
 variable "vm_extensions" {
   description = "The extensions to be added to the virtual machine"
   type = map(object({

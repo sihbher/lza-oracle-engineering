@@ -25,7 +25,7 @@ module "vm_primary" {
   vm_sku              = var.vm_sku
 
   vm_source_image_reference     = var.vm_source_image_reference
-  aad_system_assigned_identity  = true
+  aad_system_assigned_identity  = var.enable_system_assigned_identity
   public_ip_address_resource_id = module.network.db_server_puplic_ip_resources[0].id
 
 
@@ -102,7 +102,7 @@ module "vm_secondary" {
 
   vm_source_image_reference     = var.vm_source_image_reference
   vm_user_assigned_identity_id  = var.vm_user_assigned_identity_id
-  aad_system_assigned_identity  = true
+  aad_system_assigned_identity  = var.enable_system_assigned_identity
   public_ip_address_resource_id = module.network.db_server_puplic_ip_resources[1].id
 
   is_diagnostic_settings_enabled = module.common_infrastructure.is_diagnostic_settings_enabled

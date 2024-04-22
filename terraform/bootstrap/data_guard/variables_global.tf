@@ -78,6 +78,11 @@ variable "vm_user_assigned_identity_id" {
   description = "The ID of the user assigned identity to be used for the virtual machine"
 }
 
+variable "enable_system_assigned_identity" {
+  description = "If set to true, will enable system assigned identity for the virtual machine"
+  default     = false
+}
+
 variable "jit_wait_for_vm_creation" {
   description = "The duration to wait for the virtual machine to be created before creating the JIT policy"
   default     = "60s"
